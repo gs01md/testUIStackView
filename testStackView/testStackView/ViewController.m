@@ -50,7 +50,7 @@ struct FRAMESIZE_INFO{
 -(void)makeUI{
     [self initFrameInfo];
     [self makeUIofStackView];
-    [self makeUIStackViewAddViewsWithDistribution:UIStackViewDistributionFill];
+    [self makeUIStackViewAddViewsWithDistribution:UIStackViewDistributionFillProportionally];
 }
 
 /**
@@ -76,14 +76,23 @@ struct FRAMESIZE_INFO{
     
     m_mainStackView.distribution = distribution;
     
-    UIView *blueView = [[UIView alloc] init];
-    UIView *greenView = [[UIView alloc] init];
-    blueView.backgroundColor = [UIColor blueColor];
-    greenView.backgroundColor = [UIColor greenColor];
+    CGRect rectBlue  = CGRectMake(0, 0, m_frameInfo.width/6 * 3, m_frameInfo.height);
+    CGRect rectGreen = CGRectMake(0, 0, m_frameInfo.width/6 * 2, m_frameInfo.height);
+    CGRect rectRed   = CGRectMake(0, 0, m_frameInfo.width/6 * 1, m_frameInfo.height);
     
+    UILabel *blueView  = [[UILabel alloc] initWithFrame:rectBlue];
+    UILabel *greenView = [[UILabel alloc] initWithFrame:rectGreen];
+    UILabel *redView   = [[UILabel alloc] initWithFrame:rectRed];
+    blueView.backgroundColor  = [UIColor blueColor];
+    greenView.backgroundColor = [UIColor greenColor];
+    redView.backgroundColor   = [UIColor redColor];
+    blueView.text = @"1";
+    greenView.text = @"11";
+    redView.text = @"111";
     
     [m_mainStackView addArrangedSubview:blueView];
     [m_mainStackView addArrangedSubview:greenView];
+    [m_mainStackView addArrangedSubview:redView];
     
 }
 
