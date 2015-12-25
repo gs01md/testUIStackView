@@ -80,19 +80,22 @@ struct FRAMESIZE_INFO{
     CGRect rectGreen = CGRectMake(0, 0, m_frameInfo.width/6 * 2, m_frameInfo.height);
     CGRect rectRed   = CGRectMake(0, 0, m_frameInfo.width/6 * 1, m_frameInfo.height);
     
-    UILabel *blueView  = [[UILabel alloc] initWithFrame:rectBlue];
-    UILabel *greenView = [[UILabel alloc] initWithFrame:rectGreen];
-    UILabel *redView   = [[UILabel alloc] initWithFrame:rectRed];
-    blueView.backgroundColor  = [UIColor blueColor];
-    greenView.backgroundColor = [UIColor greenColor];
-    redView.backgroundColor   = [UIColor redColor];
-    blueView.text = @"1";
-    greenView.text = @"11";
-    redView.text = @"111";
+    UILabel *blueLable  = [[UILabel alloc] initWithFrame:rectBlue];
+    UILabel *greenLable = [[UILabel alloc] initWithFrame:rectGreen];
+    UILabel *redLable   = [[UILabel alloc] initWithFrame:rectRed];
+    blueLable.backgroundColor  = [UIColor blueColor];
+    greenLable.backgroundColor = [UIColor greenColor];
+    redLable.backgroundColor   = [UIColor redColor];
+    blueLable.text = @"1";
+    greenLable.text = @"11";
+    redLable.text = @"111";
+    blueLable.textAlignment  = NSTextAlignmentCenter;
+    greenLable.textAlignment = NSTextAlignmentCenter;
+    redLable.textAlignment   = NSTextAlignmentCenter;
     
-    [m_mainStackView addArrangedSubview:blueView];
-    [m_mainStackView addArrangedSubview:greenView];
-    [m_mainStackView addArrangedSubview:redView];
+    [m_mainStackView addArrangedSubview:blueLable];
+    [m_mainStackView addArrangedSubview:greenLable];
+    [m_mainStackView addArrangedSubview:redLable];
     
 }
 
