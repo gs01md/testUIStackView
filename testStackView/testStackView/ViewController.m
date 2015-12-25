@@ -76,27 +76,39 @@ struct FRAMESIZE_INFO{
     
     m_mainStackView.distribution = distribution;
     
-    CGRect rectBlue  = CGRectMake(0, 0, m_frameInfo.width/6 * 3, m_frameInfo.height);
-    CGRect rectGreen = CGRectMake(0, 0, m_frameInfo.width/6 * 2, m_frameInfo.height);
-    CGRect rectRed   = CGRectMake(0, 0, m_frameInfo.width/6 * 1, m_frameInfo.height);
-    
-    UILabel *blueLable  = [[UILabel alloc] initWithFrame:rectBlue];
-    UILabel *greenLable = [[UILabel alloc] initWithFrame:rectGreen];
-    UILabel *redLable   = [[UILabel alloc] initWithFrame:rectRed];
+    UILabel *blueLable  = [[UILabel alloc] init];
+    UILabel *greenLable = [[UILabel alloc] init];
+    UILabel *redLable   = [[UILabel alloc] init];
+    UILabel *blackLable = [[UILabel alloc] init];
+    UILabel *yellowLable = [[UILabel alloc] init];
+    UILabel *pinkLable   = [[UILabel alloc] init];
     
     blueLable.backgroundColor  = [UIColor blueColor];
     greenLable.backgroundColor = [UIColor greenColor];
     redLable.backgroundColor   = [UIColor redColor];
+    blackLable.backgroundColor  = [UIColor blackColor];
+    yellowLable.backgroundColor = [UIColor yellowColor];
+    pinkLable.backgroundColor   = [UIColor purpleColor];
+    
     blueLable.text = @"1";
     greenLable.text = @"11";
     redLable.text = @"111";
+    blackLable.text = @"1";
+    yellowLable.text = @"11";
+    pinkLable.text = @"111";
     blueLable.textAlignment  = NSTextAlignmentCenter;
     greenLable.textAlignment = NSTextAlignmentCenter;
     redLable.textAlignment   = NSTextAlignmentCenter;
+    blackLable.textAlignment  = NSTextAlignmentCenter;
+    yellowLable.textAlignment = NSTextAlignmentCenter;
+    pinkLable.textAlignment   = NSTextAlignmentCenter;
     
     [m_mainStackView addArrangedSubview:blueLable];
     [m_mainStackView addArrangedSubview:greenLable];
     [m_mainStackView addArrangedSubview:redLable];
+    [m_mainStackView addArrangedSubview:blackLable];
+    [m_mainStackView addArrangedSubview:yellowLable];
+    [m_mainStackView addArrangedSubview:pinkLable];
     
 }
 
